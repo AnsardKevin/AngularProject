@@ -1,0 +1,53 @@
+<div *ngIf="_contact">
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <label>
+      First Name:
+      <input type="text" formControlName="firstname">
+   </label>
+   <br>
+   <label>
+      Last Name:
+      <input type="text" formControlName="lastname">
+   </label>
+   <br>
+   <label>
+      Id:
+      <input type="text" formControlName="id">
+   </label>
+   <br>
+   <label>
+      Email:
+      <input type="text" formControlName="email">
+   </label>
+   <br>
+   <label>
+      Phone Number:
+      <input type="text" formControlName="phone_number">
+   </label>
+   <br>
+   <label>
+      Birthday:
+      <input type="text" formControlName="naissance">
+   </label>
+   <br>
+   <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </form>
+  <br>
+
+   <h2>{{_contact.firstname | uppercase}} Details</h2>
+   <div>id: {{_contact.id}}</div>
+   <div>lastname: {{_contact.lastname}} </div>
+   <div>
+      email: 
+      <a href="mailto:{{_contact.email}}">{{_contact.email}}</a>
+   </div>
+   <div>
+      <nav>
+         tel:
+         <a href="tel:0669780106">{{_contact.phone_number}}</a>
+      </nav>
+   </div>
+   <div>date de naissance: {{_contact.naissance}}</div>
+
+</div>
